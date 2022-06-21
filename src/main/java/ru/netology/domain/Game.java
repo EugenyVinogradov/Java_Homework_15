@@ -10,7 +10,7 @@ import java.util.*;
 @Data
 
 public class Game {
-    protected HashMap<String, Player> game;
+    protected ArrayList<Player> game;
 
     public Game() {
         this.game = new HashMap<>();
@@ -18,12 +18,14 @@ public class Game {
 
 
     public Player findByName(String playerName) {
+
         if (game.containsKey(playerName)) {
             return game.get(playerName);
         }
 
         return null;
     }
+
 
     public void register(Player player) {
         this.game.put(player.getName(), player);
