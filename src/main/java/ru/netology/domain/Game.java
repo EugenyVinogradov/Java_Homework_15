@@ -10,10 +10,10 @@ import java.util.*;
 @Data
 
 public class Game {
-    protected ArrayList<Player> game;
+    protected HashMap<String,Player> game;
 
     public Game() {
-        this.game = new HashMap<>();
+        this.game = new HashMap<String, Player>();
     }
 
 
