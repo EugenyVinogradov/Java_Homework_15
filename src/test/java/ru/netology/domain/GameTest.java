@@ -2,14 +2,13 @@ package ru.netology.domain;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
 import java.util.Collection;
 
 
 public class GameTest {
     public Game game = new Game();
-
-
 
 
     Player player1 = new Player(1, "Bob", 7);
@@ -31,6 +30,7 @@ public class GameTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     void checkFindByName() {
         game.register(player1);
@@ -41,6 +41,7 @@ public class GameTest {
         Player actual = game.findByName("Bob");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void checkRoundFirstPlayerWins() {
         game.register(player1);
@@ -51,6 +52,7 @@ public class GameTest {
         int actual = game.round("Bob", "Max");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void checkRoundSecondPlayerWins() {
         game.register(player1);
@@ -58,9 +60,10 @@ public class GameTest {
         game.register(player3);
         game.register(player4);
         int expected = 0;
-        int actual = game.round("Pol","Alex");
+        int actual = game.round("Pol", "Alex");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void checkRoundNobodyWins() {
         game.register(player1);
@@ -69,7 +72,7 @@ public class GameTest {
         game.register(player4);
         game.register(newPlayer);
         int expected = 1;
-        int actual = game.round("John","Max");
+        int actual = game.round("John", "Max");
         Assertions.assertEquals(expected, actual);
     }
 
@@ -90,8 +93,6 @@ public class GameTest {
         game.register(player4);
         Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Alex", "Igor"));
     }
-
-
 
 
 }
