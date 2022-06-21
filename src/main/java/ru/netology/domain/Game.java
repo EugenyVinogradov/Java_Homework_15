@@ -10,25 +10,25 @@ import java.util.*;
 @Data
 
 public class Game {
-    protected ArrayList<Player> game;
+    protected HashMap<String,Player> game;
 
     public Game() {
-        this.game = new ArrayList<>();
+        this.game = new HashMap<String, Player>();
     }
 
 
     public Player findByName(String playerName) {
-        for (Player player : game) {
-            if (player.getName().equals(playerName)) {
-                Player tmp = player;
-                return tmp;
-            }
+
+        if (game.containsKey(playerName)) {
+            return game.get(playerName);
         }
+
         return null;
     }
 
-    public void register(Player newPlayer) {
-        this.game.add(newPlayer);
+
+    public void register(Player player) {
+        this.game.put(player.getName(), player);
     }
 
     public int round(String playerName1, String playerName2) {

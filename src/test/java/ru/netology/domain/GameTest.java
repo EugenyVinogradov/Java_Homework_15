@@ -3,9 +3,6 @@ package ru.netology.domain;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.Collection;
-
 
 public class GameTest {
     public Game game = new Game();
@@ -25,8 +22,8 @@ public class GameTest {
         game.register(player3);
         game.register(player4);
         game.register(newPlayer);
-        Collection expected = Arrays.asList(player1, player2, player3, player4, newPlayer);
-        Collection actual = game.getGame();
+        Player expected = player1;
+        Player actual = game.getGame().get("Bob");
         Assertions.assertEquals(expected, actual);
 
     }
@@ -34,9 +31,6 @@ public class GameTest {
     @Test
     void checkFindByName() {
         game.register(player1);
-        game.register(player2);
-        game.register(player3);
-        game.register(player4);
         Player expected = player1;
         Player actual = game.findByName("Bob");
         Assertions.assertEquals(expected, actual);
