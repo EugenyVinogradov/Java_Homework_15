@@ -2,14 +2,14 @@ package ru.netology.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 import java.util.*;
 
 @AllArgsConstructor
 @Data
 
-public class Game implements Map<String, Player> {
+public class Game {
     protected HashMap<String, Player> game;
 
     public Game() {
@@ -45,64 +45,4 @@ public class Game implements Map<String, Player> {
         throw new NotRegisteredException("Player " + playerName1 + " is not registered");
     }
 
-
-    @Override
-    public int size() {
-        return 0;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
-    public boolean containsKey(Object key) {
-        return false;
-    }
-
-    @Override
-    public boolean containsValue(Object value) {
-        return false;
-    }
-
-    @Override
-    public Player get(Object key) {
-        return null;
-    }
-
-    @Override
-    public Player put(String key, Player value) {
-        return null;
-    }
-
-    @Override
-    public Player remove(Object key) {
-        return null;
-    }
-
-    @Override
-    public void putAll(Map<? extends String, ? extends Player> m) {
-
-    }
-
-    @Override
-    public void clear() {
-
-    }
-
-    @Override
-    public Set<String> keySet() {
-        return null;
-    }
-
-    @Override
-    public Collection<Player> values() {
-        return null;
-    }
-
-    @Override
-    public Set<Entry<String, Player>> entrySet() {
-        return null;
-    }
 }
